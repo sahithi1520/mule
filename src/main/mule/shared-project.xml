@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="4d00ef7b-3447-4614-8b25-ab11f339f289" >
+		<http:listener-connection host="0.0.0.0" port="8082" />
+	</http:listener-config>
+	<flow name="shared-projectFlow" doc:id="15f8b3b2-8446-44d6-bbe1-766b5f3b4aa9" >
+		<http:listener doc:name="Listener" doc:id="06f28055-554e-49f9-a655-a7f9f2bfb10e" config-ref="HTTP_Listener_config" path="/sharedproject"/>
+		<logger level="INFO" doc:name="this project is for gibhub calss" doc:id="ec518a3a-2555-43df-9e9a-d114e5447b89" message="this project is for gibhub calss"/>
+		<set-payload value="github class" doc:name="github class" doc:id="494ce409-c5b5-462f-ab4c-d92867ebe903" />
+	</flow>
+</mule>
